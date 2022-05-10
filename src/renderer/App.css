@@ -2,21 +2,16 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
-body {
+ body {
   position: relative;
   color: white;
+  width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
   font-family: sans-serif;
   overflow-y: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  user-select: none;
 }
 
 button {
@@ -42,21 +37,9 @@ li {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
+.side-icon img{
+  filter: invert(54%) sepia(33%) saturate(279%) hue-rotate(146deg) brightness(88%) contrast(91%);
 }
-
-a:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+.side-icon:hover img{
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(193deg) brightness(108%) contrast(101%);
 }

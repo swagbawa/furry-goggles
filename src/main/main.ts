@@ -14,6 +14,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import initIPC from './IPC/main/index';
 
 export default class AppUpdater {
   constructor() {
@@ -73,6 +74,7 @@ const createWindow = async () => {
     show: false,
     width: 1024,
     height: 728,
+    frame: false,
     icon: getAssetPath('icon.png'),
     webPreferences: {
       preload: app.isPackaged
@@ -82,7 +84,7 @@ const createWindow = async () => {
   });
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
-
+  initIPC(ipcMain, mainWindow);
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');

@@ -1,0 +1,6 @@
+.dir-tree + div{
+  display: block !important;
+}
+.dir-tree > div{
+  transform: rotate(90deg);
+}

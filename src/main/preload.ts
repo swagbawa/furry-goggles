@@ -1,6 +1,10 @@
 import { contextBridge, ipcRenderer } from 'electron';
+import directoryIpcRenderer from './IPC/renderer/directory';
+import windowIpcRenderer from './IPC/renderer/window';
 
 contextBridge.exposeInMainWorld('electron', {
+  directoryIpcRenderer,
+  windowIpcRenderer,
   ipcRenderer: {
     myPing() {
       ipcRenderer.send('ipc-example', 'ping');
